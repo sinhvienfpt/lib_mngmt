@@ -39,17 +39,30 @@ while True:
         author = input("Enter the author: ")
         year = int(input("Enter the year: "))
         mylib.insert(book_id, (title, author, year))
+        index.add(book_id)
+    
+    # Delete a book
     elif input_ == '2':
         book_id = int(input("Enter the book ID: "))
         mylib.delete(book_id)
+        
+    # Display all books
     elif input_ == '3':
         mylib.display()
+        
+    # Search a book by ID
     elif input_ == '4':
+        if book_id not in index:
+            print("This book ID does not exist")
         book_id = int(input("Enter the book ID: "))
         mylib.searchbyid(book_id)
+        
+    # Search a book by author
     elif input_ == '5':
         author = input("Enter the author: ")
         mylib.searchbyauthor(author)
+        
+    # Exit the system
     else:
         print("Thank you for using the Library Management System")
         break
