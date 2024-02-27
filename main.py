@@ -63,9 +63,9 @@ while True:
         
     # Search a book by ID
     elif input_ == '4':
+        book_id = int(input("Enter the book ID: "))
         if book_id not in index:
             print("This book ID does not exist")
-        book_id = int(input("Enter the book ID: "))
         mylib.searchbyid(book_id)
         
     # Search a book by author
